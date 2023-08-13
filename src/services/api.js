@@ -45,3 +45,14 @@ export const fetchReviews = async id => {
     toast.error(error.message);
   }
 };
+
+export const fetchMovieByQuery = async query => {
+  try {
+    const data = await axios.get(
+      `search/movie?query=${query}&api_key=${API_KEY}&include_adult=false&language=en-US&page=1`
+    );
+    return data;
+  } catch (error) {
+    toast.error(error.message);
+  }
+};

@@ -13,7 +13,6 @@ export const Cast = () => {
   useEffect(() => {
     fetchCast(id).then(res => setCast(res.data.cast));
   }, [id]);
-  console.log(cast);
   return (
     <div>
       <ul>
