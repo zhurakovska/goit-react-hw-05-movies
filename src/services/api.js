@@ -12,3 +12,36 @@ export const fetchTrendingMovies = async () => {
     toast.error(error.message);
   }
 };
+
+export const fetchMoviesDetails = async id => {
+  try {
+    const data = await axios.get(
+      `movie/${id}?api_key=${API_KEY}&language=en-US7`
+    );
+    return data;
+  } catch (error) {
+    toast.error(error.message);
+  }
+};
+
+export const fetchCast = async id => {
+  try {
+    const data = await axios.get(
+      `movie/${id}/credits?api_key=${API_KEY}&language=en-US`
+    );
+    return data;
+  } catch (error) {
+    toast.error(error.message);
+  }
+};
+
+export const fetchReviews = async id => {
+  try {
+    const data = await axios.get(
+      `movie/${id}/reviews?api_key=${API_KEY}&language=en-US`
+    );
+    return data;
+  } catch (error) {
+    toast.error(error.message);
+  }
+};
