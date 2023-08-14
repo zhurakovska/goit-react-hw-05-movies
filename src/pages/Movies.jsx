@@ -1,10 +1,11 @@
 import { SearchForm } from 'components/SearchForm/SearchForm';
 import React from 'react';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
-export const Movies = () => {
+const Movies = () => {
   const [searchResults, setSearchResults] = useState([]);
+  const location = useLocation();
   return (
     <>
       <SearchForm setSearchResults={setSearchResults}></SearchForm>
@@ -13,7 +14,7 @@ export const Movies = () => {
       <ul>
         {searchResults.map(movie => (
           <li key={movie.id}>
-            <Link to={`${movie.id}`} key={movie.id}>
+            <Link state={{ location }} to={`${movie.id}`} key={movie.id}>
               {movie.title}
             </Link>
           </li>
@@ -22,3 +23,5 @@ export const Movies = () => {
     </>
   );
 };
+
+export default Movies;

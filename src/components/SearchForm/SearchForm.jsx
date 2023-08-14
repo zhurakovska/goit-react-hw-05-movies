@@ -21,7 +21,7 @@ export const SearchForm = ({ setSearchResults }) => {
 
     setSearchParams(value !== '' ? { query: value } : {});
     if (!query && !value) {
-      toast.warning(`It is hard to search with such little information`);
+      toast.warning(`not enough information`);
       return;
     } else if (query.toLocaleLowerCase() === value.toLocaleLowerCase()) {
       toast.info(`Please change your request`);
@@ -30,17 +30,19 @@ export const SearchForm = ({ setSearchResults }) => {
   };
 
   return (
-    <form onSubmit={onSubmit}>
-      <input
-        autoComplete="off"
-        autoFocus="on"
-        type="text"
-        name="query"
-        placeholder="Enter your movie"
-        value={value}
-        onChange={e => setValue(e.target.value)}
-      />
-      <button>Search</button>
-    </form>
+    <div>
+      <form onSubmit={onSubmit}>
+        <input
+          autoComplete="off"
+          autoFocus="on"
+          type="text"
+          name="query"
+          placeholder="Enter your movie"
+          value={value}
+          onChange={e => setValue(e.target.value)}
+        />
+        <button>Search</button>
+      </form>
+    </div>
   );
 };

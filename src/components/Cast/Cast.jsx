@@ -1,11 +1,9 @@
 import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-
 import { fetchCast } from 'services/api';
 
-export const Cast = () => {
+const Cast = () => {
   const { id } = useParams();
 
   const [cast, setCast] = useState([]);
@@ -34,3 +32,5 @@ export const Cast = () => {
     </div>
   );
 };
+
+export default Cast;

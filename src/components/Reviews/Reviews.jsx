@@ -1,10 +1,8 @@
 import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchReviews } from 'services/api';
-
-export const Reviews = () => {
+const Reviews = () => {
   const { id } = useParams();
 
   const [reviews, setReviews] = useState([]);
@@ -28,3 +26,5 @@ export const Reviews = () => {
     </>
   );
 };
+
+export default Reviews;
