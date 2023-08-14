@@ -1,8 +1,7 @@
-import React, { Suspense } from 'react';
-import { useEffect, useState, useRef } from 'react';
-import { Outlet, useLocation, useParams } from 'react-router-dom';
+import React from 'react';
+import { useEffect, useState, useRef, Suspense } from 'react';
+import { Outlet, useLocation, useParams, Link } from 'react-router-dom';
 import { fetchMoviesDetails } from 'services/api';
-import { Link } from 'react-router-dom';
 import { Loader } from './Loader/Loader';
 
 const MovieDetails = () => {

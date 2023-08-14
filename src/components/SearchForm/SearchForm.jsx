@@ -1,7 +1,7 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { fetchMovieByQuery } from 'services/api';
-import { useState } from 'react';
-import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
@@ -45,4 +45,8 @@ export const SearchForm = ({ setSearchResults }) => {
       </form>
     </div>
   );
+};
+
+SearchForm.propTypes = {
+  setSearchResults: PropTypes.func.isRequired,
 };

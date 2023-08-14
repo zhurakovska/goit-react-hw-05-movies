@@ -1,7 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchReviews } from 'services/api';
+
 const Reviews = () => {
   const { id } = useParams();
 
@@ -25,6 +27,9 @@ const Reviews = () => {
       </ul>
     </>
   );
+};
+Reviews.propTypes = {
+  id: PropTypes.string.isRequired,
 };
 
 export default Reviews;

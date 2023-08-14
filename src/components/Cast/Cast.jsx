@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchCast } from 'services/api';
@@ -31,6 +32,9 @@ const Cast = () => {
       </ul>
     </div>
   );
+};
+Cast.propTypes = {
+  id: PropTypes.string.isRequired,
 };
 
 export default Cast;

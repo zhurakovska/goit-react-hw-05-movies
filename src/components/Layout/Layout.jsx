@@ -1,8 +1,8 @@
-import { Loader } from 'components/Loader/Loader';
 import React from 'react';
+import { Suspense } from 'react';
+import { Loader } from 'components/Loader/Loader';
 import { Outlet } from 'react-router-dom';
 import { Navbar } from './Navbar';
-import { Suspense } from 'react';
 
 export const Layout = () => {
   return (

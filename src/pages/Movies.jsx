@@ -1,8 +1,8 @@
-import { SearchForm } from 'components/SearchForm/SearchForm';
 import React from 'react';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-
+import { SearchForm } from 'components/SearchForm/SearchForm';
+import PropTypes from 'prop-types';
 const Movies = () => {
   const [searchResults, setSearchResults] = useState([]);
   const location = useLocation();
@@ -22,6 +22,9 @@ const Movies = () => {
       </ul>
     </>
   );
+};
+Movies.propTypes = {
+  setSearchResults: PropTypes.func.isRequired,
 };
 
 export default Movies;
