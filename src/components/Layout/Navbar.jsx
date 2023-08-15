@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavContainer, CustomNavLink } from './Navbar.styled';
 
 export const Navbar = () => {
   return (
-    <nav>
-      <Link to="/">Home</Link>
-      <Link to="/movies">Movies</Link>
-    </nav>
+    <NavContainer>
+      <CustomNavLink to="/">Home</CustomNavLink>
+      <CustomNavLink to="/movies">Movies</CustomNavLink>
+    </NavContainer>
   );
 };

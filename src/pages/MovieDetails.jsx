@@ -2,7 +2,7 @@ import React from 'react';
 import { useEffect, useState, useRef, Suspense } from 'react';
 import { Outlet, useLocation, useParams, Link } from 'react-router-dom';
 import { fetchMoviesDetails } from 'services/api';
-import { Loader } from './Loader/Loader';
+import { Loader } from '../components/Loader/Loader';
 
 const MovieDetails = () => {
   const { id } = useParams();
